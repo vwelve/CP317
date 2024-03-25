@@ -49,7 +49,6 @@ public class Control {
 			System.out.println("");
 			System.out.println("Encountered an error:");
 			System.out.println(e.getMessage());
-			e.printStackTrace();
 		} finally {
 			System.out.println("");
 			System.out.println("");
