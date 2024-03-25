@@ -26,13 +26,13 @@ public class LinkedList<T extends Data> {
 		T product = null;
 		Node<T> curr = head;
 		
-		while (curr != null || product != null) {
+		while (curr != null && product == null) {
 			T data = curr.getData();
 			int productId = data.getId();
 			if (productId == id) {
 				product = data;
 			} else {
-				curr.getNext();
+				curr = curr.getNext();
 			}
 		}
 		

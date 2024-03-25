@@ -44,11 +44,8 @@ public class TextFileReader {
 		LinkedList<Product> productList = new LinkedList<Product>();
 		try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
 			String line = reader.readLine();
-			while (line != null) {
-				String[] values = line.split(",");
-				for (String val: values) {
-					System.out.println(val);
-				}
+			while (line != null && line.trim().strip() != "") {
+				String[] values = line.trim().strip().split(",");
 				
 				if (values.length == 7) {
 					int id = parseId(values[0].trim());
@@ -83,8 +80,8 @@ public class TextFileReader {
 		
 		try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
 			String line = reader.readLine();
-			while (line != null) {
-				String[] values = line.split(",");
+			while (line != null && line != "") {
+				String[] values = line.trim().strip().split(",");
 				
 				if (values.length == 5) {
 					int id = parseId(values[0]);
@@ -98,6 +95,7 @@ public class TextFileReader {
 				} else {
 					throw new Exception("Each line must be in format 'id,name,address,phone,email'");
 				}
+				line = reader.readLine();
 			}
 			
 		} catch (IOException e) {
