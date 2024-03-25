@@ -10,14 +10,20 @@ public class LinkedList<T extends Data> {
 	private void addNode(Node<T> node) {
 		if (head == null) {
 			head = node;
+		} else if (node.getData().getId() < head.getData().getId()) {
+			node.setNext(head);
+			head = node;
 		} else {
-			Node<T> curr = head;
+			Node<T> prev = head;
+			Node<T> curr = head.getNext();
 			
-			while (curr.getNext() != null) {
+			while (curr != null && curr.getData().getId() < node.getData().getId()) {
+				prev = prev.getNext();
 				curr = curr.getNext();
 			}
-		
-			curr.setNext(node);
+			
+			node.setNext(prev.getNext());
+			prev.setNext(node);
 		}
 		count++;
 	}
