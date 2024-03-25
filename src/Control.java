@@ -50,6 +50,9 @@ public class Control {
 			System.out.println("Encountered an error:");
 			System.out.println(e.getMessage());
 		} finally {
+			System.out.println("");
+			System.out.println("");
+			System.out.println("Press 'Enter' to Exit the program.");
 			scanner.nextLine();
 			scanner.close();
 		}
