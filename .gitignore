@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij,macos,windows,visualstudiocode,visualstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse,intellij,macos,windows,visualstudiocode,visualstudio
 
+src/Inventory.txt
+src/ProductFile.txt
+src/SupplierFile.txt
+
 ### Eclipse ###
 .metadata
 bin/

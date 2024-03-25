@@ -4,6 +4,7 @@ public class Control {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		String outputFile = System.getProperty("user.dir") + "/src/InventoryFile.txt";
 		
 		try {
 			System.out.println("Enter the product file to read from:");
@@ -43,7 +44,7 @@ public class Control {
 			}
 			System.out.println("Successfully loaded the InventoryList");
 			
-			OutputWriter.writeOutput("./src/Inventory.txt", inventory);
+			OutputWriter.writeOutput(outputFile, inventory);
 			
 		} catch (Exception e) {
 			System.out.println("");
