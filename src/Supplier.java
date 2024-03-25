@@ -1,24 +1,25 @@
 
-public class Supplier {
-	private int supplierId;
-	private String supplierName;
-	private String supplierAddress;
+public class Supplier extends Data {
+	private String address;
+	private String phone;
+	private String email;
 	
-	public Supplier(int supplierId, String supplierName, String supplierAddress) {
-		this.supplierId = supplierId;
-		this.supplierName = supplierName;
-		this.supplierAddress = supplierAddress;
+	public Supplier(int id, String name, String address, String phone, String email) {
+		super(id, name);
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
 	}
 	
-	public int getSupplierId() {
-		return supplierId;
+	public String getAddress() {
+		return address;
 	}
 	
-	public String getSupplierName() {
-		return supplierName;
+	public String getPhone() {
+		return phone;
 	}
 	
-	public String getSupplierAddress() {
-		return supplierAddress;
+	public String getEmail() {
+		return email;
 	}
 }
