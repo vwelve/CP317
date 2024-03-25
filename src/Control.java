@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Control {
 
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
 		try {
-			Scanner scanner = new Scanner(System.in);
-			
 			System.out.println("Enter the product file to read from:");
 			String productFile = scanner.nextLine();
 			
@@ -42,8 +42,12 @@ public class Control {
 			}
 			
 			OutputWriter.writeOutput("./src/Inventory.txt", inventory);
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+		} finally {
+			scanner.nextLine();
+			scanner.close();
 		}
 		
 	}
